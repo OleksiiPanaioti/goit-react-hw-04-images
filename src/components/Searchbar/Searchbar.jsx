@@ -1,47 +1,48 @@
 import { Component } from 'react';
 import * as yup from 'yup';
 import { Formik } from 'formik';
-import { ImSearch } from 'react-icons/im';
+// import { ImSearch } from 'react-icons/im';
 import { Form, ButtonSubmit, FieldStyled, Span } from './Searchbar.styled';
 
 const initialValues = { name: '' };
 
-const formSchema = yup.object().shape({
-  name: yup.string().trim().required('Required field!'),
-});
+// const formSchema = yup.object().shape({
+//   name: yup.string().trim().required('Required field!'),
+// });
 
 export default class Searchbar extends Component {
   state = {
     pictureName: '',
   };
 
-  handleNameChange = e => {
-    this.setState({ pictureName: e.currentTarget.value.toLowerCase() });
+  handleNameChange = event => {
+    this.setState({ pictureName: event.currentTarget.value.toLowerCase() });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
+  handleSubmit = e => {
+    // e.preventDefault();
+
+    this.props.onSubmit(this.state.pictureName);
 
     this.setState({ pictureName: '' });
   };
 
   render() {
     return (
-      <header class="searchbar">
+      <header>
         <Formik
           initialValues={initialValues}
-          validationSchema={formSchema}
+          //   validationSchema={formSchema}
           onSubmit={this.handleSubmit}
         >
           <Form htmlFor="name">
-            <ButtonSubmit type="submit">
-              <Span>Search</Span>
+            <ButtonSubmit type="submit" className="button">
+              <span className="button-label">Search</span>
             </ButtonSubmit>
 
             <FieldStyled
+              name="name"
               type="text"
-              autocomplete="off"
-              autofocus
               placeholder="Search images and photos"
               onChange={this.handleNameChange}
             />

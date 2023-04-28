@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form as FormikForm, Field as FormikField } from 'formik';
+import { Form as FormikForm } from 'formik';
 
 export const Form = styled(FormikForm)`
   top: 0;
