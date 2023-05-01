@@ -5,9 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import {
   SearchBar,
-  SerchForm,
+  SearchForm,
   Input,
-  SearchBtn,
+  Button,
   SerchFormBtnLabel,
 } from './Searchbar.styled';
 
@@ -33,7 +33,7 @@ export default class SearchingBar extends Component {
   render() {
     return (
       <SearchBar>
-        <SerchForm onSubmit={this.handleSubmit}>
+        <SearchForm onSubmit={this.handleSubmit}>
           <Input
             type="text"
             autoComplete="off"
@@ -43,10 +43,10 @@ export default class SearchingBar extends Component {
             value={this.state.searchQuery}
             onChange={this.handleChange}
           />
-          <SearchBtn type="submit">
+          <Button type="submit">
             <SerchFormBtnLabel>Search</SerchFormBtnLabel>
-          </SearchBtn>
-        </SerchForm>
+          </Button>
+        </SearchForm>
       </SearchBar>
     );
   }

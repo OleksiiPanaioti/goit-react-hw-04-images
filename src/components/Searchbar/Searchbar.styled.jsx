@@ -8,24 +8,24 @@ export const SearchBar = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 64px;
-  padding-right: 24px;
-  padding-left: 24px;
+  min-height: 100px;
+  padding-right: 32x;
+  padding-left: 32px;
   padding-top: 12px;
   padding-bottom: 12px;
   color: #fff;
-  background-color: #3f51b5;
+  background-color: #8b90af;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
 
-export const SerchForm = styled.form`
+export const SearchForm = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 600px;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
 `;
 export const Input = styled.input`
@@ -35,24 +35,27 @@ export const Input = styled.input`
   font-size: 20px;
   border: none;
   outline: none;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   ::placeholder {
     font: inherit;
-    font-size: 18px;
+    font-size: 20px;
   }
 `;
 
-export const SearchBtn = styled.button`
-  display: inline-block;
-  width: 48px;
+export const Button = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60px;
   height: 48px;
   border: 0;
   cursor: pointer;
   outline: none;
   :hover {
-    opacity: 1;
+    background-color: aliceblue;
+    color: red;
   }
 `;
 

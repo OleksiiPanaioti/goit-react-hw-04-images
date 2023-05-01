@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 
 import SearchingBar from './Searchbar/Searchbar';
-import { AppContainer } from './App.styled';
+import { Container } from './App.styled';
 import Modal from './Modal/Modal';
 import Spiner from './Loader/Loader';
 import LoadMoreButton from './Button/Button';
@@ -100,7 +100,7 @@ export default class App extends Component {
   render() {
     const { images, status, selectedImage, alt, error } = this.state;
     return (
-      <AppContainer>
+      <Container>
         <SearchingBar onSubmit={this.handleFormSubmit} />
         <ToastContainer autoClose={3000} theme="colored" pauseOnHover />
         {status === 'pending' && <Spiner />}
@@ -128,7 +128,7 @@ export default class App extends Component {
             onClose={this.closeModal}
           />
         )}
-      </AppContainer>
+      </Container>
     );
   }
 }
