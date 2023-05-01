@@ -1,8 +1,6 @@
 import { Component } from 'react';
-
 import axios from 'axios';
 import PropTypes from 'prop-types';
-
 import { ToastContainer, toast } from 'react-toastify';
 
 import SearchingBar from './Searchbar/Searchbar';
@@ -96,6 +94,8 @@ export default class App extends Component {
       selectedImage: null,
     });
   };
+
+  // ---->
 
   render() {
     const { images, status, selectedImage, alt, error } = this.state;

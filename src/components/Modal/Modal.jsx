@@ -1,9 +1,11 @@
 import { Component } from 'react';
-import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
-import { ModalOverlay, ModalContainer } from './Modal.styled';
 
-const modalRoot = document.querySelector('#modal-root');
+import PropTypes from 'prop-types';
+
+import { ModalOverlay, ModalContainer } from './Modal.styled';
+import { createPortal } from 'react-dom';
+
+const modalRoot = document.querySelector('#root');
 
 export default class Modal extends Component {
   static propTypes = {
@@ -20,14 +22,14 @@ export default class Modal extends Component {
     window.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = evt => {
-    if (evt.code === 'Escape') {
+  handleKeyDown = e => {
+    if (e.code === 'Escape') {
       this.props.onClose();
     }
   };
 
-  handleBackdropClick = evt => {
-    if (evt.target === evt.currentTarget) {
+  handleBackdropClick = e => {
+    if (e.target === e.currentTarget) {
       this.props.onClose();
     }
   };
